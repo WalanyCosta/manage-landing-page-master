@@ -8,9 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://unpkg.com/a11y-slider@latest/dist/a11y-slider.css" />
-  <script src="https://unpkg.com/a11y-slider@latest/dist/a11y-slider.js" defer ></script>
 </head>
 <body> 
   <header class="primary-header">
@@ -116,12 +115,70 @@
         What they’ve said
       </h2>
       <!-- Carousel here -->
-      <ul class="slider">
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-      </ul>
+      <div class="swiper">
+        <ul class="slider swiper-wrapper">
+          <li class="swiper-slide">
+            <img src="images/avatar-ali.png"/>
+
+            <div class="slider-content | flow" style="--flow-spacer: 1rem">
+              <h3 class="fw-bold">
+                Ali Brave
+              </h3>
+              <p data-width="wide">
+                “Manage has supercharged our team’s workflow. The ability to maintain 
+                visibility on larger milestones at all times keeps everyone motivated.”
+              </p>
+            </div>
+          </li>
+
+          <li class="swiper-slide">
+            <img src="images/avatar-anisha.png"/>
+
+            <div class="slider-content | flow" style="--flow-spacer: 1rem">
+              <h3 class="fw-bold">
+                Anisha Li
+              </h3>
+              <p data-width="wide">
+                “Manage has supercharged our team’s workflow. The ability to maintain 
+                visibility on larger milestones at all times keeps everyone motivated.”
+              </p>
+            </div>
+          </li>
+
+          <li class="swiper-slide">
+            <img src="images/avatar-richard.png"/>
+
+            <div class="slider-content | flow" style="--flow-spacer: 1rem">
+              <h3 class="fw-bold">
+                Richard Watts
+              </h3>
+              <p data-width="wide">
+                “Manage allows us to provide structure and process. It keeps us organized 
+                and focused. I can’t stop recommending them to everyone I talk to!”
+              </p>
+            </div>
+          </li>
+
+          <li class="swiper-slide">
+            <img src="images/avatar-shanai.png"/>
+
+            <div class="slider-content | flow" style="--flow-spacer: 1rem">
+              <h3 class="fw-bold">
+                Shanai Gough
+              </h3>
+              <p data-width="wide">
+                “Their software allows us to track, manage and collaborate on our projects 
+                from anywhere. It keeps the whole team in-sync without being intrusive.”
+              </p>
+            </div>
+          </li>
+        </ul>
+
+        <div class="swiper-pagination"></div>
+
+      </div>
+        <!-- If we need scrollbar -->
+      </div>
       <button class="button">Get Started</button>
     </section>
 
@@ -215,5 +272,32 @@
     </div>
   </footer>
   <script src="main.js"></script>
+  <script type="module">
+       import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
+
+       const swiper = new Swiper('.swiper', {
+        loop: true,
+        fade: 'true',
+        centerSlide: 'true',
+        grabCursor: 'true',
+        pagination: {
+              el: '.swiper-pagination',
+              clickable: true,
+        },
+        breakpoints: {
+          0:{
+            slidesPerView: 1,
+           
+          },
+          520: {
+            slidesPerView: 2,
+          },
+          950: {
+            slidesPerView: 3,
+          }
+        },
+
+      });
+  </script>
 </body>
 </html>
